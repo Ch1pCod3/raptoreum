@@ -286,7 +286,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent, bool fAllow
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
 }
 
-/* void setupAppearance(QWidget* parent, OptionsModel* model)
+void setupAppearance(QWidget* parent, OptionsModel* model)
 {
     if (!QSettings().value("fAppearanceSetupDone", false).toBool()) {
         // Create the dialog
@@ -326,7 +326,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent, bool fAllow
         // And fire it!
         dlg.exec();
     }
-} */
+}
 
 void setupAppearance(QWidget* parent, OptionsModel* model)
 {
@@ -1179,7 +1179,7 @@ void loadStyleSheet(bool fForceUpdate)
 
         std::vector<QString> vecFiles;
         // If light/dark theme is used load general styles first
-        if (raptoreumThemeActive()) {
+        if (dashThemeActive()) {
             vecFiles.push_back(pathToFile(generalTheme));
         }
         vecFiles.push_back(pathToFile(getActiveTheme()));
